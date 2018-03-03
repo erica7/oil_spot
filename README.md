@@ -31,5 +31,6 @@ Requires an iOS machine with Xcode >=9.0 installed
 - Make sure `react-native-cli` is installed 
   - `react-native -v` to check if it's installed 
   - `npm install -g react-native-cli` to install (might have to run as admin)
+- In `./ios/OilSpot/AppDelegate.m`, ensure the 'react-native jsCodeLocation' is uncommented, and the 'Xcode jsCodeLocation' is commented
 - `react-native run-ios` to compile and run the application in Simulator
 

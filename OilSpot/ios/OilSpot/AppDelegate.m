@@ -18,9 +18,13 @@
 {
   NSURL *jsCodeLocation;
   
-  // Per React Native documentation set the jsCodeLocation (https://facebook.github.io/react-native/docs/running-on-device.html)
-  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-  // jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+  // Per React Native documentation set the jsCodeLocation based on run environment (https://facebook.github.io/react-native/docs/running-on-device.html) 
+  
+  // Xcode jsCodeLocation - Uncomment if building with Xcode (comment out other jsCodeLocation declaration):
+  // jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+  
+  // react-native jsCodeLocation - Uncomment if running with `react-native run-ios` (comment out other jsCodeLocation declaration):
+  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"OilSpot"
