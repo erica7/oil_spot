@@ -49,6 +49,7 @@ class HomeScreen extends React.Component {
     // title: ' ',
     headerStyle: {
       backgroundColor: '#111',
+      borderBottomWidth: 0,
     },
     headerTintColor: '#fff',
   };

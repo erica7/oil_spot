@@ -5,11 +5,11 @@ formulas = {
   flowrate: {
     items: [
       {s: new Item("Speed", [["rpm", 1], ["rph", 60], ["rps", 1/60]])},
-      {n: new Item("Number of Plungers", [["qty", 1]])},
-      {d: new Item("Plunger Diameter", [["in", 1], ["cm", 2.54]])},
+      {n: new Item("# Plungers", [["qty", 1]])},
+      {d: new Item("Plunger Dia.", [["in", 1], ["cm", 2.54]])},
       {l: new Item("Stroke", [["in", 1], ["cm", 2.54]])},
       {q: new Item("Flowrate", [["gpm", 1], ["bbl/m", 0.024], ["bbl/h", 1.43]])},
-      {n_p: new Item("Number of Pumps", [["qty", 1]])},
+      {n_p: new Item("# Pumps", [["qty", 1]])},
     ],
     formulas: [
       {

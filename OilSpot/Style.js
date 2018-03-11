@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     paddingRight: 14,
     paddingBottom: 4,
     borderRadius: 7,
-    height: '95%'
+    height: 39
   },
 
   // FONT SIZE
@@ -129,12 +129,11 @@ const styles = StyleSheet.create({
   // TODO - eliminate class; refactor into separate classes
   //FormulaItem and UnitConverterItem
   parameter: {
-    flex: 4,
+    flex: 5,
     // color: '#eee',
     textAlign: 'right',
     // textTransform: 'upper-case',
-    flexWrap: 'wrap',
-    // flexDirection: 'row',
+    // flexWrap: 'wrap',
   },
   // TODO - eliminate class; refactor into separate classes
   modalView: {
@@ -146,7 +145,7 @@ const styles = StyleSheet.create({
   //UnitConverter
   // TODO - eliminate class; refactor into separate classes
   parameterName: {
-    fontSize: 22,
+    fontSize: 21,
     textAlign: 'center',
     margin: 9,
   },
