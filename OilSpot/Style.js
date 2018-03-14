@@ -40,8 +40,9 @@ const styles = StyleSheet.create({
   },
   //secondary button (e.g. units)
   btnSec: {
-    paddingTop: 8,
-    marginTop: 0,
+    // paddingTop: 8, //fixed Flowrate units display issue on iPad 9.7" 
+    marginTop: -5,
+    marginBottom: -10, //fixed Flowrate units display issue on iPad 9.7" 
   },
   //secondary button text (e.g. units)
   btnSec_text: {
