@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAvoidingView, ScrollView } from 'react-native';
+import { KeyboardAvoidingView, ScrollView, StatusBar } from 'react-native';
 const styles = require('./Style.js');
 const UnitConverterItem = require('./UnitConverterItem.js');
 const globals = require('./Globals.js');
@@ -26,6 +26,7 @@ class UnitConverter extends React.Component {
     })
     return (
       <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={100} style={[styles.container, styles.color_background_primary]}>
+        <StatusBar barStyle="light-content" />
         <ScrollView contentContainerStyle={styles.containerContent} style={[styles.containerWithoutAlign, styles.color_background_primary]}>
           { unitItems }
         </ScrollView>

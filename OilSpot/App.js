@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 const styles = require('./Style.js');
 const UnitConverter = require('./UnitConverter.js');
@@ -19,10 +19,17 @@ const TouchableElement = globals.TouchableElement;
 //        |-- UnitConverterItem
 
 // TODO
-//  clear individual fields on a single click
-//  quick select common values (e.g. number of plungers)
-//  verify formulas and conversion factors
-//  day & night modes
+//  [ ] icon 
+//  [ ] page titles
+//  [x] status bar visibility
+//  [ ] navigation button visibility
+//  [ ] update landing page 
+//  [ ] scroll bar visibility
+//  [ ] highlight and move focus to calculated field 
+//  [ ] clear individual fields on a single click
+//  [ ] quick select common values (e.g. number of plungers)
+//  [ ] verify formulas and conversion factors
+//  [ ] day & night modes
 
 function printState(obj) {
   console.log(obj.state);
@@ -58,6 +65,7 @@ class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={[styles.container, styles.color_background_primary]}>
+        <StatusBar barStyle="light-content" />
         <Text style={[styles.font, styles.color_font_primary, styles.font_biggest, styles.font_bold]}>THE OIL SPOT</Text>
         { menuButton(navigate, 'FormulaView', 'Flowrate', formulas.flowrate) }
         { menuButton(navigate, 'FormulaView', 'Horsepower', formulas.horsepower) }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StatusBar } from 'react-native';
 const styles = require('./Style.js');
 const FormulaItem = require('./FormulaItem.js');
 const globals = require('./Globals.js');
@@ -129,6 +129,7 @@ export class FormulaView extends React.Component {
     });
     return(
       <View style={[styles.container, styles.color_background_primary]}>
+        <StatusBar barStyle="light-content" />
         <View style={styles.content}>
           { formulaItems }
           <TouchableElement
