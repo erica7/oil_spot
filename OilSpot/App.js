@@ -19,11 +19,11 @@ const TouchableElement = globals.TouchableElement;
 //        |-- UnitConverterItem
 
 // TODO
-//  [ ] icon 
-//  [ ] page titles
+//  [x] icon 
+//  [x] page titles
 //  [x] status bar visibility
-//  [ ] navigation button visibility
-//  [ ] update landing page 
+//  [x] navigation button visibility
+//  [x] update landing page 
 //  [ ] scroll bar visibility
 //  [ ] highlight and move focus to calculated field 
 //  [ ] clear individual fields on a single click
@@ -45,42 +45,61 @@ function printState(obj) {
  */
 const menuButton = (navigate, navName, navTitle = navName, p = null) => { 
   return (
-    <TouchableElement style={[styles.btn, styles.color_btn_primary, styles.width_full]} underlayColor="#ccc" activeOpacity={0.7} onPress={() => navigate(navName, {p: p})} >
+    <TouchableElement 
+      style={[styles.btn, styles.color_btn_primary, styles.width_full]} 
+      underlayColor={globals.Colors.blue[2]}
+      activeOpacity={0.7} 
+      onPress={() => navigate(navName, {p: p, navTitle: navTitle.toUpperCase()})} 
+    >
       <Text style={[styles.btn_text, styles.color_font_secondary]}>{ navTitle.toUpperCase() }</Text>
     </TouchableElement>
   )
 };
 
 class HomeScreen extends React.Component {
-  static navigationOptions = {
-    // title: ' ',
-    headerStyle: {
-      backgroundColor: '#111',
-      borderBottomWidth: 0,
-    },
-    headerTintColor: '#fff',
-  };
   render() {
     //each screen receives a navigation prop from react-navigation; extract the navigate method to pass as a parameter later
     const { navigate } = this.props.navigation;
     return (
       <View style={[styles.container, styles.color_background_primary]}>
         <StatusBar barStyle="light-content" />
-        <Text style={[styles.font, styles.color_font_primary, styles.font_biggest, styles.font_bold]}>THE OIL SPOT</Text>
+        <Text style={[styles.font, styles.text_center, styles.color_font_accent, styles.fontFamily_accent, styles.font_bold]}>
+          <Text style={[styles.font_bigger]}>THE</Text>
+          <Text style={[styles.font_biggest]}> OIL SPOT</Text>
+        </Text>
         { menuButton(navigate, 'FormulaView', 'Flowrate', formulas.flowrate) }
         { menuButton(navigate, 'FormulaView', 'Horsepower', formulas.horsepower) }
         { menuButton(navigate, 'FormulaView', 'Rod Load', formulas.rodload) }
         { menuButton(navigate, 'UnitConverter', 'Unit Converter', units.units) }
+        <Text style={[styles.font, styles.color_font_accent, styles.font_smallest, styles.bottom]}>&#169; Erica Snider {new Date().getFullYear()}</Text>
       </View>
     );
   }
 }
 
 //TODO make sure first page is explicit
-const CalcApp = StackNavigator({
-  Home: { screen: HomeScreen },
-  FormulaView: { screen: FormulaView },
-  UnitConverter: { screen: UnitConverter },
+const CalcApp = StackNavigator(
+  {
+    Home: { screen: HomeScreen },
+    FormulaView: { screen: FormulaView },
+    UnitConverter: { screen: UnitConverter },
+    initialRouteName: 'Home',
+  },
+  {
+    navigationOptions: {
+    headerStyle: {
+      backgroundColor: globals.Colors.black[1],
+      borderBottomWidth: 0,
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontFamily: 'Avenir-Oblique',
+      fontSize: 24,
+      letterSpacing: 2,
+      color: globals.Colors.green[3]
+    },
+  }
 });
 
 export default App = CalcApp;

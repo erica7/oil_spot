@@ -10,14 +10,6 @@ const Item = globals.Item;
 //NOTE: Arrow functions preserve the `this` binding. The `this` value of the enclosing execution context is used.
 
 export class FormulaView extends React.Component {
-  static navigationOptions = {
-    //title: ' ',
-    headerStyle: {
-      backgroundColor: '#111',
-      borderBottomWidth: 0, 
-    },
-    headerTintColor: '#fff',
-  };
   constructor(props) {
     super(props); // extends the context (`this`) of the parent constructor 
     // console.log("FormulaView this.props", this.props);
@@ -32,6 +24,14 @@ export class FormulaView extends React.Component {
     // 
     this.child = [];
   }
+
+  static navigationOptions = ({ navigation }) => {
+    const { params } = navigation.state; 
+    const navTitle = params ? params.navTitle : 'CALCULATE';
+    return {
+      title: navTitle,
+    }
+  };
 
   // Fill an array with values of the child copmonents
   getChildValues = () => {
@@ -129,14 +129,13 @@ export class FormulaView extends React.Component {
     });
     return(
       <View style={[styles.container, styles.color_background_primary]}>
-        <StatusBar barStyle="light-content" />
         <View style={styles.content}>
           { formulaItems }
           <TouchableElement
             ref={ref => {this.calcBtn = ref}}
             disabled={!this.state.allowCalc}
             style={[styles.btn, styles.color_btn_primary, styles.width_full, this.state.allowCalc ? null : styles.color_btn_disabled]} 
-            underlayColor={"#2cc"}
+            underlayColor={globals.Colors.blue[2]}
             activeOpacity={0.7}
             onPress={ this.doTheMath }
           >
@@ -146,7 +145,7 @@ export class FormulaView extends React.Component {
             ref={ref => {this.clearAllBtn = ref}}
             disabled={!this.state.allowClearAll}
             style={[styles.btn, styles.color_btn_primary, styles.width_full, this.state.allowClearAll ? null : styles.color_btn_disabled]} 
-            underlayColor={"#2cc"}
+            underlayColor={globals.Colors.blue[2]}
             activeOpacity={0.7}
             onPress={ this.clearAll }
           >

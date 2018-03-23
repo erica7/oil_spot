@@ -1,5 +1,10 @@
-import { StyleSheet } from 'react-native';
 // NOTE regex example styles\.btn[^a-z_]
+import { StyleSheet } from 'react-native';
+const globals = require('./Globals.js')
+const c = globals.Colors;
+
+//https://coolors.co/5c7474-5ca5e9-c4ee62-ec9366-f4efe7
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -55,6 +60,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
+    marginBottom: 5,
   },
   textInput: {
     textAlign: 'right',
@@ -64,19 +70,23 @@ const styles = StyleSheet.create({
     paddingRight: 14,
     paddingBottom: 4,
     borderRadius: 7,
-    height: 39
+    height: 39,
   },
 
   // FONT SIZE
   font: { fontSize: 22, },
   font_bigger: { fontSize: 26, },
-  font_biggest: { fontSize: 36, },
+  font_biggest: { fontSize: 46, }, //36
+  font_smallest: { fontSize: 12, },
   // FONT STYLE
   font_bold: {
     fontWeight: 'bold',
   },
   font_spaced: {
     letterSpacing: 50,
+  },
+  fontFamily_accent: {
+    fontFamily: 'Avenir-Oblique',
   },
   // TEXT ALIGNMENT
   text_left: { textAlign: 'left', },
@@ -93,17 +103,22 @@ const styles = StyleSheet.create({
   width_full: {
     width: '90%',
   },
+  // LOCATION 
+  bottom: {
+    position: 'absolute',
+    bottom: 14,
+  },
   // COLORS
   //  NIGHT MODE
-  color_font_primary: { color: '#eee', },
-  color_font_secondary: { color: '#111', },
-  color_font_accent: { color: '#3ee', },
-  color_font_selected: { color: '#199', fontWeight: 'bold', },
-  color_btn_primary: { backgroundColor: '#eee', },
-  color_btn_secondary: { backgroundColor: '#111', },
-  color_btn_disabled: { backgroundColor: '#777', },
-  color_background_primary: { backgroundColor: '#111', },
-  color_background_secondary: { backgroundColor: '#000', },
+  color_font_primary: { color: c.black[4], },
+  color_font_secondary: { color: c.black[1], },
+  color_font_accent: { color: c.green[3], },
+  color_font_selected: { color: c.green[1], fontWeight: 'bold', },
+  color_btn_primary: { backgroundColor: c.black[3], },
+  color_btn_secondary: { backgroundColor: c.black[1], },
+  color_btn_disabled: { backgroundColor: c.black[2], },
+  color_background_primary: { backgroundColor: c.black[1], },
+  color_background_secondary: { backgroundColor: c.black[0], },
   //  DAY MODE
   // color_font_primary: { color: '#111', },
   // color_font_secondary: { color: '#eee', },
@@ -138,7 +153,7 @@ const styles = StyleSheet.create({
   },
   // TODO - eliminate class; refactor into separate classes
   modalView: {
-    backgroundColor: '#333',
+    backgroundColor: c.black[2],
     justifyContent: 'center',
     height: '100%',
     padding: 44,

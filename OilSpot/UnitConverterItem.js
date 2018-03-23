@@ -73,7 +73,12 @@ class UnitConverterItem extends React.Component {
           <View style={styles.modalView}>
             { 
               this.props.item.getUnits().map((x,i) => (
-                <TouchableElement key={i} style={[styles.btn, styles.color_btn_primary]} onPress={() => { this.state.unit2Active ? this.setState({displayUnit2: x, modalVisible: false}) : this.setState({displayUnit: x, modalVisible: false}) }}>
+                <TouchableElement 
+                  key={i} 
+                  style={[styles.btn, styles.color_btn_primary]} 
+                  onPress={() => { this.state.unit2Active ? this.setState({displayUnit2: x, modalVisible: false}) : this.setState({displayUnit: x, modalVisible: false}) }}
+                  underlayColor={globals.Colors.blue[2]}
+                >
                   <Text style={[styles.btn_text, styles.color_font_secondary,
                       this.state.unit2Active 
                         ? this.state.displayUnit2 == x && styles.color_font_selected
@@ -99,7 +104,7 @@ class UnitConverterItem extends React.Component {
           />
           <TouchableElement 
             style={[styles.btnSec, styles.flex_2]}
-            underlayColor={"#333"}
+            underlayColor={globals.Colors.blue[2]}
             activeOpacity={0.7}
             onPress={() => { this.setState({unit2Active: false, modalVisible: true}) }} 
             >
@@ -122,7 +127,7 @@ class UnitConverterItem extends React.Component {
           />
           <TouchableElement 
             style={[styles.btnSec, styles.flex_2]}
-            underlayColor={"#333"}
+            underlayColor={globals.Colors.blue[2]}
             activeOpacity={0.7}
             onPress={() => { this.setState({unit2Active: true, modalVisible: true}) }} 
             >
