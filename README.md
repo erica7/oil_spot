@@ -15,10 +15,10 @@
 ```
  Globals, Formulas, Units, Style
  App 
-  |-- FormulaView
-  |    |-- FormulaItem 
-  |-- UnitConverter
-       |-- UnitConverterItem 
+  ├── FormulaView
+  │    └── FormulaItem 
+  └── UnitConverter
+       └── UnitConverterItem 
 ```
 
 ## Developer's Guide
