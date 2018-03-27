@@ -1,8 +1,8 @@
 # oil_spot
 
-### The Oil Spot is a utilities application for the oil & gas industry that includes common field calculations and convenient unit conversions. ß
+### The Oil Spot is a utilities application for the oil & gas industry that includes common field calculations and convenient unit conversions. 
 
-#### Built with React Native. Deployed on the App Store (iOS). 
+#### Built with React Native. Deployed on the iOS App Store. 
 
 <div> 
 <a href="https://itunes.apple.com/us/app/the-oil-spot/id1358428753?mt=8">
