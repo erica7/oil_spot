@@ -7,7 +7,6 @@ const FormulaView = require('./FormulaView.js');
 const globals = require('./Globals.js');
 const formulas = require('./Formulas.js');
 const units = require('./Units.js');
-
 const TouchableElement = globals.TouchableElement;
 
 // App Structure:
