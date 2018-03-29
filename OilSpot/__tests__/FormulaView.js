@@ -1,13 +1,11 @@
 import 'react-native';
 import React from 'react';
-import App from '../App';
+import FormulaView from '../FormulaView';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 
-it('renders correctly', () => {
-  const tree = renderer.create(
-    <App />
-  ).toJSON();
+it('renders FormulaView correctly', () => {
+  const tree = renderer.create(<FormulaView />).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -70,7 +70,9 @@ class HomeScreen extends React.Component {
         { menuButton(navigate, 'FormulaView', 'Horsepower', formulas.horsepower) }
         { menuButton(navigate, 'FormulaView', 'Rod Load', formulas.rodload) }
         { menuButton(navigate, 'UnitConverter', 'Unit Converter', units.units) }
-        <Text style={[styles.font, styles.color_font_accent, styles.font_smallest, styles.bottom]}>&#169; Erica Snider {new Date().getFullYear()}</Text>
+        <Text style={[styles.font, styles.color_font_accent, styles.font_smallest, styles.bottom]}>
+          &#169; Erica Snider {new Date().getFullYear()}
+        </Text>
       </View>
     );
   }
