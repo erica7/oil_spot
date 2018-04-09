@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 const styles = require('./Style.js');
 const UnitConverter = require('./UnitConverter.js');
 const FormulaView = require('./FormulaView.js');
+const Market = require('./Market.js');
 const globals = require('./Globals.js');
 const formulas = require('./Formulas.js');
 const units = require('./Units.js');
@@ -70,6 +71,7 @@ class HomeScreen extends React.Component {
         { menuButton(navigate, 'FormulaView', 'Horsepower', formulas.horsepower) }
         { menuButton(navigate, 'FormulaView', 'Rod Load', formulas.rodload) }
         { menuButton(navigate, 'UnitConverter', 'Unit Converter', units.units) }
+        { menuButton(navigate, 'Market') }
         <Text style={[styles.font, styles.color_font_accent, styles.font_smallest, styles.bottom]}>
           &#169; Erica Snider {new Date().getFullYear()}
         </Text>
@@ -84,6 +86,7 @@ const CalcApp = StackNavigator(
     Home: { screen: HomeScreen },
     FormulaView: { screen: FormulaView },
     UnitConverter: { screen: UnitConverter },
+    Market: { screen: Market },
     initialRouteName: 'Home',
   },
   {
