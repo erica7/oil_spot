@@ -39,7 +39,6 @@ formulas = {
       {
         constraints: [true, true, true, true, false, true],
         formula: function([s, n, d, l, q, n_p]) {
-          // return 0.25 * Math.PI * Math.pow(d, 2) * l.getValue() * n.getValue() * s.getValue() * 1 / 231;
           return 0.25 * Math.PI * Math.pow(d, 2) * l * n * s * n_p * 1 / 231;
         }
       },

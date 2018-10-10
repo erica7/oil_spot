@@ -12,7 +12,6 @@ const Item = globals.Item;
 export class FormulaView extends React.Component {
   constructor(props) {
     super(props); // extends the context (`this`) of the parent constructor 
-    // console.log("FormulaView this.props", this.props);
     this.state = {
       allowCalc: false,
       allowClearAll: false,
@@ -21,7 +20,6 @@ export class FormulaView extends React.Component {
     const { params } = this.props.navigation.state;
     this.items = params.p.items;
     this.formulas = params.p.formulas;
-    // 
     this.child = [];
   }
 

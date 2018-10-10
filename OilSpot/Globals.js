@@ -1,4 +1,3 @@
-import React from 'react';
 import { Platform, TouchableHighlight, TouchableNativeFeedback } from 'react-native';
 
 globals = {

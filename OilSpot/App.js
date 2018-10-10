@@ -19,11 +19,6 @@ const TouchableElement = globals.TouchableElement;
 //        |-- UnitConverterItem
 
 // TODO
-//  [x] icon 
-//  [x] page titles
-//  [x] status bar visibility
-//  [x] navigation button visibility
-//  [x] update landing page 
 //  [ ] scroll bar visibility
 //  [ ] highlight and move focus to calculated field 
 //  [ ] clear individual fields on a single click
@@ -107,9 +102,3 @@ const CalcApp = StackNavigator(
 });
 
 export default App = CalcApp;
-
-// export default class App extends React.Component {
-//   render() {
-//     return <CalcApp />;
-//   }
-// }
