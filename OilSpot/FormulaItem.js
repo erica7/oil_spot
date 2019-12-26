@@ -1,9 +1,7 @@
 import React from 'react';
-import { Text, TextInput, View, Modal } from 'react-native';
+import { Text, TextInput, View, Modal, TouchableHighlight } from 'react-native';
 const styles = require('./Style.js');
 const globals = require('./Globals.js');
-
-const TouchableElement = globals.TouchableElement;
 
 export class FormulaItem extends React.Component {
   constructor(props) {
@@ -89,8 +87,8 @@ export class FormulaItem extends React.Component {
             { 
               item.getUnits().map((x, i) => { 
                 return(
-                  // <TouchableElement style={[styles.btn, styles.color_btn_primary]} onPress={() => {this.setState({displayUnit: x, modalVisible: false})}}>
-                  <TouchableElement 
+                  // <TouchableHighlight style={[styles.btn, styles.color_btn_primary]} onPress={() => {this.setState({displayUnit: x, modalVisible: false})}}>
+                  <TouchableHighlight 
                     key={i.toString()} 
                     style={[styles.btn, styles.color_btn_primary]} 
                     onPress={() => {this.changeUnit(x)}}
@@ -99,7 +97,7 @@ export class FormulaItem extends React.Component {
                     <Text style={[styles.btn_text, styles.color_font_secondary, this.state.displayUnit == x && styles.color_font_selected]}>
                       { x[0] } {this.state.displayUnit == x && "\u2713"}
                     </Text>
-                  </TouchableElement>
+                  </TouchableHighlight>
                 )
               })
             }
@@ -116,7 +114,7 @@ export class FormulaItem extends React.Component {
           value={this.displayValue()}
           selectionColor="#f00"
         />
-        <TouchableElement 
+        <TouchableHighlight 
           style={[styles.btnSec, styles.flex_2]}
           underlayColor={item.getUnits().length > 1 ? globals.Colors.black[2] : null}
           activeOpacity={item.getUnits().length > 1 ? 0.7 : 1}
@@ -125,7 +123,7 @@ export class FormulaItem extends React.Component {
           <Text style={[styles.font, styles.btnSec_text, styles.color_font_primary, item.getUnits().length > 1 && styles.color_font_accent]}>
             {this.getDisplayUnitText()}
           </Text>
-        </TouchableElement>
+        </TouchableHighlight>
       </View>
     );
   }
