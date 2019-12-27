@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StatusBar } from 'react-native';
+import { Text, View, StatusBar, TouchableHighlight } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 const styles = require('./Style.js');
 const UnitConverter = require('./UnitConverter.js');
@@ -8,7 +8,6 @@ const Market = require('./Market.js');
 const globals = require('./Globals.js');
 const formulas = require('./Formulas.js');
 const units = require('./Units.js');
-const TouchableElement = globals.TouchableElement;
 
 // App Structure:
 //  Globals, Formulas, Units, Style
@@ -40,14 +39,14 @@ function printState(obj) {
  */
 const menuButton = (navigate, navName, navTitle = navName, p = null) => { 
   return (
-    <TouchableElement 
+    <TouchableHighlight 
       style={[styles.btn, styles.color_btn_primary, styles.width_full]} 
       underlayColor={globals.Colors.blue[2]}
       activeOpacity={0.7} 
       onPress={() => navigate(navName, {p: p, navTitle: navTitle.toUpperCase()})} 
     >
       <Text style={[styles.btn_text, styles.color_font_secondary]}>{ navTitle.toUpperCase() }</Text>
-    </TouchableElement>
+    </TouchableHighlight>
   )
 };
 

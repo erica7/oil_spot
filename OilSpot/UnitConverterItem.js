@@ -1,9 +1,7 @@
 import React from 'react';
-import { Text, TextInput, View, Modal } from 'react-native';
+import { Text, TextInput, View, Modal, TouchableHighlight } from 'react-native';
 const styles = require('./Style.js');
 const globals = require('./Globals.js');
-
-const TouchableElement = globals.TouchableElement;
 
 //TODO store one canonicalValue and two displayUnits per item 
 class UnitConverterItem extends React.Component {
@@ -73,7 +71,7 @@ class UnitConverterItem extends React.Component {
           <View style={styles.modalView}>
             { 
               this.props.item.getUnits().map((x,i) => (
-                <TouchableElement 
+                <TouchableHighlight 
                   key={i} 
                   style={[styles.btn, styles.color_btn_primary]} 
                   onPress={() => { this.state.unit2Active ? this.setState({displayUnit2: x, modalVisible: false}) : this.setState({displayUnit: x, modalVisible: false}) }}
@@ -86,7 +84,7 @@ class UnitConverterItem extends React.Component {
                   ]}>
                     { x[0] } {this.state.unit2Active ? this.state.displayUnit2 == x && "\u2713" : this.state.displayUnit == x && "\u2713" }
                   </Text>
-                </TouchableElement>
+                </TouchableHighlight>
               ))
             }
           </View>
@@ -102,7 +100,7 @@ class UnitConverterItem extends React.Component {
             value={this.displayValue(1)}
             selectionColor="#f00"
           />
-          <TouchableElement 
+          <TouchableHighlight 
             style={[styles.btnSec, styles.flex_2]}
             underlayColor={globals.Colors.blue[2]}
             activeOpacity={0.7}
@@ -111,7 +109,7 @@ class UnitConverterItem extends React.Component {
             <Text style={[styles.font, styles.btnSec_text, styles.color_font_accent]}>
               {this.state.displayUnit[0]}
             </Text>
-          </TouchableElement>
+          </TouchableHighlight>
 
         </View>
 
@@ -125,7 +123,7 @@ class UnitConverterItem extends React.Component {
             value={this.displayValue(2)}
             selectionColor="#f00"
           />
-          <TouchableElement 
+          <TouchableHighlight 
             style={[styles.btnSec, styles.flex_2]}
             underlayColor={globals.Colors.blue[2]}
             activeOpacity={0.7}
@@ -134,11 +132,11 @@ class UnitConverterItem extends React.Component {
             <Text style={[styles.font, styles.btnSec_text, styles.color_font_accent]}>
               {this.state.displayUnit2[0]}
             </Text>
-          </TouchableElement>
+          </TouchableHighlight>
         </View>
       </View>
     )
   }
 }
 
-module.exports = UnitConverterItem
+module.exports = UnitConverterItem;
