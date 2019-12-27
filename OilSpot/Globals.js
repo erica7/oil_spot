@@ -1,8 +1,4 @@
-import React from 'react';
-import { Platform, TouchableHighlight, TouchableNativeFeedback } from 'react-native';
-
 globals = {
-  TouchableElement: (Platform.OS === 'android') ? TouchableNativeFeedback : TouchableHighlight ,
   aVariable: "a variable!",
   Item: class Item {  //never stores value
     constructor(displayName, units) {

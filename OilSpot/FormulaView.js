@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, Text, StatusBar } from 'react-native';
+import { View, Text, TouchableHighlight } from 'react-native';
 const styles = require('./Style.js');
 const FormulaItem = require('./FormulaItem.js');
 const globals = require('./Globals.js');
 
-const TouchableElement = globals.TouchableElement;
 const Item = globals.Item;
 
 //NOTE: Arrow functions preserve the `this` binding. The `this` value of the enclosing execution context is used.
@@ -131,7 +130,7 @@ export class FormulaView extends React.Component {
       <View style={[styles.container, styles.color_background_primary]}>
         <View style={styles.content}>
           { formulaItems }
-          <TouchableElement
+          <TouchableHighlight
             ref={ref => {this.calcBtn = ref}}
             disabled={!this.state.allowCalc}
             style={[styles.btn, styles.color_btn_primary, styles.width_full, this.state.allowCalc ? null : styles.color_btn_disabled]} 
@@ -140,8 +139,8 @@ export class FormulaView extends React.Component {
             onPress={ this.doTheMath }
           >
             <Text style={[styles.btn_text, styles.color_font_secondary, styles.text_center]}>CALCULATE</Text>
-          </TouchableElement>
-          <TouchableElement
+          </TouchableHighlight>
+          <TouchableHighlight
             ref={ref => {this.clearAllBtn = ref}}
             disabled={!this.state.allowClearAll}
             style={[styles.btn, styles.color_btn_primary, styles.width_full, this.state.allowClearAll ? null : styles.color_btn_disabled]} 
@@ -150,7 +149,7 @@ export class FormulaView extends React.Component {
             onPress={ this.clearAll }
           >
             <Text style={[styles.btn_text, styles.color_font_secondary, styles.text_center]}>CLEAR ALL</Text>
-          </TouchableElement>
+          </TouchableHighlight>
         </View>
         <View style={styles.spacing}></View>
       </View>

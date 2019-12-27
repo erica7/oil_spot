@@ -1,10 +1,8 @@
 import React from 'react';
-import { KeyboardAvoidingView, ScrollView, StatusBar } from 'react-native';
+import { KeyboardAvoidingView, ScrollView } from 'react-native';
 const styles = require('./Style.js');
 const UnitConverterItem = require('./UnitConverterItem.js');
 const globals = require('./Globals.js');
-
-const TouchableElement = globals.TouchableElement;
 
 class UnitConverter extends React.Component {
   constructor(props) {
@@ -32,4 +30,4 @@ class UnitConverter extends React.Component {
   }
 }
 
-module.exports = UnitConverter
+module.exports = UnitConverter;
